@@ -1,0 +1,162 @@
+/* Quiz Général — style simple mais fun */
+
+/*
+  Principes:
+  - Palette douce mais joyeuse (bleu-violet et corail)
+  - Animations légères et option "réduire les animations"
+  - Contraste accessible, focus visible
+  - Responsive avec clamp()
+*/
+
+.container {
+  /* Variables locales (scope module) */
+  --bg: radial-gradient(1200px 600px at 10% -10%, #e6f0ff 0%, transparent 50%),
+        radial-gradient(900px 500px at 110% 10%, #ffe8f0 0%, transparent 55%),
+        linear-gradient(180deg, #ffffff, #fbfbff);
+  --text: #0f172a; /* slate-900 */
+  --muted: #475569; /* slate-600 */
+  --hint: #64748b; /* slate-500 */
+  --brand: #6d28d9; /* violet-700 */
+  --brand-2: #f97316; /* orange-500 */
+  --brand-3: #22d3ee; /* cyan-400 */
+  --card: #ffffff;
+  --ring: #7c3aed; /* violet-600 */
+
+  max-width: 900px;
+  margin: 0 auto;
+  padding: clamp(32px, 6vw, 72px) clamp(16px, 5vw, 40px);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  text-align: center;
+  color: var(--text);
+  background: var(--bg);
+  border-radius: 24px;
+  box-shadow: 0 6px 20px rgba(2, 6, 23, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Petite bulle décorative "fun" */
+.container::after {
+  content: "";
+  position: absolute;
+  inset: auto -60px -60px auto;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(124,58,237,0.25), rgba(34,211,238,0.15) 60%, transparent 70%);
+  filter: blur(1px) saturate(1.1);
+  animation: blob 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes blob {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-8px, -6px) scale(1.05); }
+}
+
+.title {
+  font-size: clamp(28px, 6vw, 48px);
+  line-height: 1.1;
+  margin: 0 0 12px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  /* Gradient text, avec fallback */
+  color: var(--text);
+  background: linear-gradient(90deg, var(--brand), var(--brand-3), var(--brand-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.intro {
+  font-size: clamp(16px, 2.4vw, 20px);
+  color: var(--muted);
+  margin: 0 0 clamp(20px, 4vw, 32px);
+}
+
+.actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+}
+
+.cta {
+  --btn-bg: linear-gradient(180deg, #7c3aed, #6d28d9);
+  --btn-shadow: 0 8px 20px rgba(124, 58, 237, 0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 14px 22px;
+  border-radius: 14px;
+  background: var(--btn-bg);
+  box-shadow: var(--btn-shadow);
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+  position: relative;
+  isolation: isolate;
+}
+
+.cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(120% 120% at 0% 0%, rgba(255,255,255,0.35), transparent 40%);
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(124, 58, 237, 0.28);
+  filter: saturate(1.05);
+}
+
+.cta:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 16px rgba(124, 58, 237, 0.25);
+  filter: saturate(0.98);
+}
+
+.cta:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--ring), 0 12px 26px rgba(124, 58, 237, 0.28);
+}
+
+.hint {
+  margin-top: clamp(18px, 3vw, 28px);
+  font-size: 14px;
+  color: var(--hint);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .container {
+    --text: #e5e7eb; /* gray-200 */
+    --muted: #cbd5e1; /* slate-300 */
+    --hint: #94a3b8;  /* slate-400 */
+    --card: #0b1220;
+    --bg: radial-gradient(1200px 600px at 10% -10%, rgba(29,78,216,0.18) 0%, transparent 50%),
+          radial-gradient(900px 500px at 110% 10%, rgba(236,72,153,0.14) 0%, transparent 55%),
+          linear-gradient(180deg, #0b1020, #0a0f1a);
+    box-shadow: 0 10px 30px rgba(2,6,23,0.55);
+  }
+  .cta {
+    --btn-bg: linear-gradient(180deg, #8b5cf6, #7c3aed);
+    --btn-shadow: 0 10px 24px rgba(139, 92, 246, 0.35);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .cta, .cta:hover, .cta:active {
+    transition: none;
+    transform: none !important;
+  }
+  .container::after {
+    animation: none;
+  }
+}
