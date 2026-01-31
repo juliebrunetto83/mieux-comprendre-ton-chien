@@ -4,7 +4,7 @@ export default function Home() {
             <main>
                 <ul>
                     <li>
-                        <a href="quiz/general">Quiz général sur le chien</a>
+                        <a href="quiz/general"><h2>Quiz général sur le chien</h2></a>
                     </li>
                 </ul>
             </main>

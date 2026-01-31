@@ -1,42 +1,157 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    /* Brand palette (fournie) */
+    --violet: #4d004c;
+    --black: #2c262a;
+    --rouge: #d6002b;
+    --rose: #fad1e9;
+    --bleu: #2333d1;
+    --vert: #03a90b;
+    --cyan: #7eeef1;
+    --jaune: #f3fa33;
+    --orange: #e48a0c;
+    --white: #ffffff;
+
+    /* Semantic colors (light) */
+    --color-bg: var(--rose);
+    --color-surface: #ffffff;
+    --color-elevated: #ffffff;
+    --color-text: #1f1f1f;
+    --color-text-muted: #4b5563; /* slate-600 approx */
+    --color-border: #e5e7eb; /* gray-200 */
+
+    --color-primary: var(--rouge);
+    --color-secondary: var(--orange);
+    --color-accent: var(--cyan);
+    --color-success: #16a34a; /* green-600 */
+    --color-danger: var(--rouge);
+    --color-warning: var(--jaune);
+    --color-info: var(--cyan);
+
+    /* Typography */
+    --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --text-sm: clamp(13px, 1.6vw, 14px);
+    --text-base: clamp(15px, 1.8vw, 16px);
+    --text-lg: clamp(17px, 2vw, 18px);
+    --text-xl: clamp(20px, 3.6vw, 24px);
+    --leading: 1.6;
+
+    /* Spacing scale */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-8: 32px;
+    --space-10: 40px;
+    --space-12: 48px;
+
+    /* Radius, borders, shadows */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    /* Focus ring */
+    --ring: 0 0 0 3px rgba(35, 51, 209, 0.35); /* legacy: full shadow value */
+    --ring-color: rgba(35, 51, 209, 0.35); /* recommended: color only for composing */
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.10);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+
+    /* Layout */
+    --container: 1100px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+
+/* Base reset */
+* {
+    box-sizing: border-box;
 }
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+html {
+    color-scheme: light;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    color: var(--color-text);
+    background: var(--color-bg);
+    font-size: var(--text-base);
+    line-height: var(--leading);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    max-width: 100%;
 }
 
+/* Links */
 a {
-  color: inherit;
-  text-decoration: none;
+    color: var(--color-primary);
+    text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* Typography defaults */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-primary);
+    font-weight: 800;
+    line-height: 1.15;
+    text-transform: uppercase;
+    font-family: Lilita One, Lilita One Fallback, sans-serif;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+p {
+    margin: 0 0 0.8em;
+}
+
+small {
+    font-size: var(--text-sm);
+}
+
+/* Utilities */
+.container {
+    max-width: var(--container);
+    margin-inline: auto;
+    padding: clamp(16px, 4vw, 40px);
+}
+
+.surface {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.elevated {
+    background: var(--color-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
 }

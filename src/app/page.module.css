@@ -1,19 +1,18 @@
 .page {
-  --background: #fafafa;
-  --foreground: #fff;
+  /* Thème basé sur les tokens globaux */
+  --background: var(--violet);
+  --foreground: var(--white);
 
-  --text-primary: #000;
-  --text-secondary: #666;
+  --text-primary: var(--color-text);
 
-  --button-primary-hover: #383838;
+  --button-primary-hover: #383838; /* peut être affiné */
   --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
+  --button-secondary-border: var(--color-border);
 
   display: flex;
   min-height: 100vh;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-geist-sans);
   background-color: var(--background);
 }
 
@@ -25,7 +24,6 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  background-color: var(--foreground);
   padding: 120px 60px;
 }
 
@@ -42,7 +40,6 @@
   font-size: 40px;
   font-weight: 600;
   line-height: 48px;
-  letter-spacing: -2.4px;
   text-wrap: balance;
   color: var(--text-primary);
 }
@@ -52,7 +49,6 @@
   font-size: 18px;
   line-height: 32px;
   text-wrap: balance;
-  color: var(--text-secondary);
 }
 
 .intro a {
@@ -118,24 +114,6 @@ a.secondary {
   .intro h1 {
     font-size: 32px;
     line-height: 40px;
-    letter-spacing: -1.92px;
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
-
-  .page {
-    --background: #000;
-    --foreground: #000;
-
-    --text-primary: #ededed;
-    --text-secondary: #999;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
-  }
-}
