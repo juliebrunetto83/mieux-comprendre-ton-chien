@@ -1,6 +1,6 @@
 "use client";
 import styles from "./page.module.css";
-import {useParams} from "next/navigation";
+import {useSearchParams} from "next/navigation";
 import {useState} from "react";
 
 const etapes: {
@@ -40,7 +40,12 @@ const etapes: {
 }
 
 export default function GeneralQuizIntroPage() {
-    const {etape} = useParams<{ etape: string }>();
+    const searchParams = useSearchParams();
+    const etape = searchParams.get('etape');
+    if (!etape) {
+        return null
+    }
+
     const etapeInfo = etapes[etape]
     const [isSuccess, setIsSuccess] = useState<boolean | undefined>(undefined);
     const [answerSelected, setAnswerSelected] = useState<number[]>([]);
@@ -110,7 +115,7 @@ export default function GeneralQuizIntroPage() {
                     </p>
                     <div className={styles.successActions}>
                         <a
-                            href={`/quiz/general/${Number(etape) + 1}`}
+                            href={`/quiz/general/question?etape=${Number(etape) + 1}`}
                             className={styles.nextLink}
                         >
                             Question suivante

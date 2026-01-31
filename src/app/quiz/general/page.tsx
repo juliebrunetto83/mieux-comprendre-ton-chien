@@ -12,7 +12,7 @@ export default function GeneralQuizIntroPage() {
       </p>
 
       <div className={styles.actions}>
-        <a href="/quiz/general/1" className={styles.cta}>
+        <a href="/quiz/general/question?etape=1" className={styles.cta}>
           Let's go !
         </a>
       </div>
