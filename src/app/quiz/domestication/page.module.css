@@ -1,5 +1,3 @@
-/* Quiz Général — style simple mais fun */
-
 .container {
   max-width: 900px;
   margin: 0 auto;
@@ -19,17 +17,8 @@
   margin: 0 0 clamp(20px, 4vw, 32px);
 }
 
-.actions {
-  display: flex;
-  gap: 14px;
-  justify-content: center;
-}
 
 .cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
   color: var(--rouge);
   padding: 14px 22px;
   border-radius: 14px;
@@ -37,14 +26,6 @@
   box-shadow: 0 3px 0 4px var(--rouge);
   font-family: Lilita One, Lilita One Fallback, sans-serif;
   font-size: 1.25rem;
-}
-
-
-
-.hint {
-  margin-top: clamp(18px, 3vw, 28px);
-  font-size: 14px;
-  color: var(--color-text-muted);
 }
 
 

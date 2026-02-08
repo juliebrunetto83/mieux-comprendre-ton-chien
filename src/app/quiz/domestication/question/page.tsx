@@ -2,14 +2,16 @@
 import styles from "./page.module.css";
 import {useSearchParams} from "next/navigation";
 import {useState} from "react";
-import {questionGeneral} from "@/utils/question-general";
+import {questionDomestication} from "@/utils/question-domestication";
 
 export default function GeneralQuizIntroPage() {
     const searchParams = useSearchParams();
-    const etape = searchParams.get('etape') as string;
-    const etapeInfo = questionGeneral[etape]
+    const searchParamEtape = searchParams.get('etape')
+    const etape = searchParamEtape ? Number(searchParamEtape) - 1 : 1;
+    const etapeInfo = questionDomestication[etape]
+    console.log(etape, etapeInfo)
 
-    if (!etape || !etapeInfo) {
+    if (!etapeInfo) {
         return null
     }
 
@@ -81,7 +83,7 @@ export default function GeneralQuizIntroPage() {
                     </div>
                     <div className={styles.successActions}>
                         <a
-                            href={`/quiz/general/question?etape=${Number(etape) + 1}`}
+                            href={`/quiz/domestication/question?etape=${Number(searchParamEtape) + 1}`}
                             className={styles.nextLink}
                         >
                             Question suivante

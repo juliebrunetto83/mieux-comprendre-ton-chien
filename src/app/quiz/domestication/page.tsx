@@ -7,19 +7,15 @@ export default function GeneralQuizIntroPage() {
         Est‑ce que tu es prêt ?
       </h1>
       <p className={styles.intro}>
-        Bienvenue dans le quiz général sur le chien. Réponds aux questions, découvre ton
-        niveau et apprends en t'amusant !
+        Bienvenue dans le quiz sur la domestication du chien. Réponds aux questions et découvre ton
+        niveau !
       </p>
 
       <div className={styles.actions}>
-        <a href="/quiz/general/question?etape=1" className={styles.cta}>
+        <a href="/quiz/domestication/question?etape=1" className={styles.cta}>
           Let's go !
         </a>
       </div>
-
-      <p className={styles.hint}>
-        Astuce: réponds spontanément, il n'y a pas de mauvaise réponse.
-      </p>
     </main>
   );
 }
