@@ -38,7 +38,7 @@
 
 .optionCard {
     background: var(--color-surface);
-    border: 2px solid var(--rouge);
+    border: 2px solid var(--orange);
     border-radius: 14px;
     padding: clamp(12px, 2.4vw, 16px) clamp(12px, 2.4vw, 16px);
     cursor: pointer;
@@ -107,26 +107,15 @@
 }
 
 .nextLink {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: var(--white);
-    font-weight: 700;
+    color: var(--orange);
     padding: 14px 22px;
     border-radius: 14px;
-    background: var(--rouge);
-    box-shadow: 0 3px 0 4px var(--black);
-    transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
-    position: relative;
-    isolation: isolate;
+    background: var(--rose);
+    box-shadow: 0 3px 0 4px var(--orange);
+    font-family: Lilita One, Lilita One Fallback, sans-serif;
+    font-size: 1.25rem;
 }
 
-.nextLink:active {
-    transform: translateY(0);
-    box-shadow: 0 6px 16px rgba(124, 58, 237, 0.25);
-    filter: saturate(0.98);
-}
 
 .nextLink:focus-visible {
     outline: none;
@@ -144,8 +133,8 @@
 }
 
 .optionCardCorrect {
-    border-color:  var(--vert);
-    background: var(--vert);
+    border-color:  var(--orange);
+    background: var(--orange);
 }
 
 

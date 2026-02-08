@@ -1,17 +1,15 @@
 :root {
-    /* Brand palette (fournie) */
     --violet: #4d004c;
-    --black: #2c262a;
-    --rouge: #d6002b;
-    --rose: #fad1e9;
+    --black: rgba(255, 128, 0, 0.57);
+    --rouge: #c43535;
+    --rose: #faedd1;
     --bleu: #2333d1;
-    --vert: #03a90b;
+    --vert: #198f1e;
     --cyan: #7eeef1;
     --jaune: #f3fa33;
-    --orange: #e48a0c;
+    --orange: #ff8000;
     --white: #ffffff;
 
-    /* Semantic colors (light) */
     --color-bg: var(--rose);
     --color-surface: #ffffff;
     --color-elevated: #ffffff;
@@ -19,7 +17,7 @@
     --color-text-muted: #4b5563; /* slate-600 approx */
     --color-border: #e5e7eb; /* gray-200 */
 
-    --color-primary: var(--rouge);
+    --color-primary: var(--orange);
     --color-secondary: var(--orange);
     --color-accent: var(--cyan);
     --color-success: #16a34a; /* green-600 */

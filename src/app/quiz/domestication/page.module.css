@@ -19,11 +19,11 @@
 
 
 .cta {
-  color: var(--rouge);
+  color: var(--orange);
   padding: 14px 22px;
   border-radius: 14px;
   background: var(--rose);
-  box-shadow: 0 3px 0 4px var(--rouge);
+  box-shadow: 0 3px 0 4px var(--orange);
   font-family: Lilita One, Lilita One Fallback, sans-serif;
   font-size: 1.25rem;
 }
