@@ -1,0 +1,131 @@
+.title {
+    font-size: clamp(28px, 6vw, 42px);
+    line-height: 1.1;
+    margin: 0 0 12px;
+}
+
+.hint {
+    margin-top: clamp(18px, 3vw, 28px);
+    font-size: 14px;
+    color: var(--color-text-muted);
+}
+
+
+.options {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: clamp(12px, 2.5vw, 16px);
+}
+
+@media (min-width: 640px) {
+    .options {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.option {
+    display: block;
+}
+
+.optionCard {
+    background: var(--color-surface);
+    border: 2px solid var(--orange);
+    border-radius: 14px;
+    padding: clamp(12px, 2.4vw, 16px) clamp(12px, 2.4vw, 16px);
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease, background-color 160ms ease;
+}
+
+
+.optionText {
+    color: var(--color-text);
+    font-size: clamp(15px, 2.2vw, 17px);
+    line-height: 1.35;
+}
+
+.optionCard:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(2, 6, 23, 0.08);
+}
+
+.optionInput:focus-visible + .optionCard {
+    outline: none;
+    box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--ring-color), 0 10px 24px rgba(124, 58, 237, 0.25);
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    .optionCard, .nextLink, .nextLink:hover, .nextLink:active {
+        transition: none;
+        transform: none !important;
+    }
+}
+
+
+.successTitle {
+    font-weight: 800;
+    margin: 0 0 8px;
+    color: var(--vert)
+}
+
+.successText {
+    margin: 0 auto;
+    padding: 2rem;
+    font-size: clamp(15px, 2.2vw, 17px);
+    text-align: left;
+    line-height: 1.6;
+}
+
+.successText p {
+    margin: 0 0 0.8em;
+}
+
+.successText ul {
+    margin: 0.5em 0 1em 1.2em;
+    padding-left: 1.2em;
+}
+
+.successText li {
+    margin: 0.25em 0;
+}
+
+
+.successActions {
+    display: flex;
+    justify-content: center;
+    margin-top: clamp(16px, 3vw, 24px);
+}
+
+.nextLink {
+    color: var(--orange);
+    padding: 14px 22px;
+    border-radius: 14px;
+    background: var(--rose);
+    box-shadow: 0 3px 0 4px var(--orange);
+    font-family: Lilita One, Lilita One Fallback, sans-serif;
+    font-size: 1.25rem;
+}
+
+
+.nextLink:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--ring-color), 0 12px 26px rgba(124, 58, 237, 0.28);
+}
+
+
+.optionCardIncorrect {
+    border-color:  var(--rouge);
+}
+.optionTextIncorrect {
+    color :var(--rouge);
+}
+
+ .optionTextCorrect {
+}
+
+.optionCardCorrect {
+}
+
+

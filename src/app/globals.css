@@ -109,8 +109,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-primary);
     font-weight: 800;
     line-height: 1.15;
-    letter-spacing: 1.2;
-    text-transform: uppercase;
+    letter-spacing: 2px;
     font-family: Lilita One, Lilita One Fallback, sans-serif;
 }
 

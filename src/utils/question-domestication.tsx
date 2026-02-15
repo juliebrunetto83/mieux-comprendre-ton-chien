@@ -92,7 +92,7 @@ export const questionDomestication: Question = [{
     },
     {
         "multiple": false,
-        "question": "Que montre l’étude du chien de l’Altaï découvert en Sibérie ?",
+        "question": "Que montre l’étude du chien de l’Altaï découvert en Sibérie (-33 000 ans) ?",
         "propositions": [
             "Qu’il s’agit d’un coyote",
             "Qu’il est génétiquement plus proche du chien que du loup",
